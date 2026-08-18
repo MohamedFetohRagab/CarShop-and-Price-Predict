@@ -9,8 +9,8 @@ import {
   MapPin,
   ShieldCheck,
 } from "lucide-react";
-import { IProduct } from "../interfaces";
-import { productList } from "../data";
+import { productList } from "@/data";
+import { IProduct } from "@/interfaces";
 
 // const cars = [
 //   {

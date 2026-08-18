@@ -1,5 +1,5 @@
 import { useState } from "react";
-import UserCard, { IUser } from "./UserCard";
+import UserCard, { IUser } from "../UI/UserCard";
 const Users = () => {
   const [users, setUsers] = useState<IUser[]>([
     {

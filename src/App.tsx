@@ -1,34 +1,10 @@
 import { useState } from "react";
-import ProductCard from "./components/ProductCard/ProductCard";
+import ProductCard from "./components/UI/ProductCard";
 import { productList } from "./data";
 import { IProduct } from "./interfaces";
 
 function App() {
-  // ** States
-
   const [products, setProductList] = useState<IProduct[]>(productList);
-
-  //
-
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/api/products")
-  //     .then((res) => {
-  //       return res.json();
-  //     })
-  //     .then((data) => {
-  //       // Normalize MongoDB `_id` to `id` for frontend usage
-  //       const normalized = data.map((p: IProduct) => ({
-  //         ...p,
-  //         id: p.id,
-  //       }));
-  //       setProductList(normalized);
-  //       console.log(data);
-  //     });
-  // }, []);
-
-  //
-
-  // ** States
 
   const rederProductList = products.map((product) => (
     <ProductCard key={product.id} product={product} />
