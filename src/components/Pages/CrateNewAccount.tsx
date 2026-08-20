@@ -111,7 +111,7 @@ const CrateNewAccount = () => {
 
           <button
             type="submit"
-            className="bg-slate-700 p-3 rounded-md w-full sm:w-[70%] text-xl text-white cursor-pointer hover:bg-slate-800"
+            className="bg-slate-700 mt-5 p-3 rounded-md w-full sm:w-[70%] text-xl text-white cursor-pointer hover:bg-slate-800"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : "Sign Up"}

@@ -1,43 +1,47 @@
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Menu,
-  MenuButton,
-} from "@headlessui/react";
+import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router";
 
 const navigation = [
-  { name: "Cars", href: "/", current: true },
-  { name: "Users", href: "/users", current: false },
-  { name: "Login", href: "/login", current: false },
-  { name: "Dashboard", href: "/dashboard", current: false },
+  { name: "Cars", href: "/" },
+  { name: "Users", href: "/users" },
+  { name: "Login", href: "/login" },
+  { name: "Dashboard", href: "/dashboard" },
 ];
 
-export default function Example() {
+export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
-    <Disclosure
-      as="nav"
-      className="absolute top-5 w-full left-0 bg-gray-500 z-20 rounded-2xl"
-    >
+    <nav className="absolute top-5 left-0 z-20 w-full rounded-2xl bg-gray-500">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
+          {/* Mobile menu button */}
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-black hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
-              <span className="absolute -inset-0.5" />
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon
-                aria-hidden="true"
-                className="block size-6 group-data-open:hidden"
-              />
-              <XMarkIcon
-                aria-hidden="true"
-                className="hidden size-6 group-data-open:block"
-              />
-            </DisclosureButton>
+            <button
+              type="button"
+              onClick={toggleMenu}
+              className="relative inline-flex items-center justify-center rounded-md p-2 text-black hover:bg-white/5 hover:text-white focus:outline-none"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+            >
+              {isMenuOpen ? (
+                <XMarkIcon className="size-6" />
+              ) : (
+                <Bars3Icon className="size-6" />
+              )}
+            </button>
           </div>
+
+          {/* Desktop navigation */}
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
@@ -45,8 +49,13 @@ export default function Example() {
                   <NavLink
                     key={item.name}
                     to={item.href}
-                    aria-current={item.current ? "page" : undefined}
-                    className="rounded-md px-3 py-2 text-[16px] font-medium text-black"
+                    className={({ isActive }) =>
+                      `rounded-md px-3 py-2 text-[16px] font-medium ${
+                        isActive
+                          ? "bg-white text-black"
+                          : "text-black hover:bg-white/10"
+                      }`
+                    }
                   >
                     {item.name}
                   </NavLink>
@@ -54,37 +63,48 @@ export default function Example() {
               </div>
             </div>
           </div>
+
+          {/* Profile */}
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            {/* Profile dropdown */}
-            <Menu as="div" className="relative ml-3">
-              <MenuButton className="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                <span className="absolute -inset-1.5" />
-                <span className="sr-only">Open user menu</span>
-                <img
-                  alt=""
-                  src="/profile.png"
-                  className="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10 "
-                />
-              </MenuButton>
-            </Menu>
+            <button
+              type="button"
+              className="relative flex rounded-full focus:outline-none"
+            >
+              <span className="sr-only">Open user menu</span>
+
+              <img
+                alt="Profile"
+                src="/profile.png"
+                className="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10"
+              />
+            </button>
           </div>
         </div>
       </div>
 
-      <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pt-2 pb-3">
-          {navigation.map((item) => (
-            <NavLink
-              key={item.name}
-              to={item.href}
-              aria-current={item.current ? "page" : undefined}
-              className="rounded-md px-3 py-2 text-[16px] font-medium text-black"
-            >
-              {item.name}
-            </NavLink>
-          ))}
+      {/* Mobile menu */}
+      {isMenuOpen && (
+        <div className="sm:hidden">
+          <div className="space-y-1 px-2 pt-2 pb-3">
+            {navigation.map((item) => (
+              <NavLink
+                key={item.name}
+                to={item.href}
+                onClick={closeMenu}
+                className={({ isActive }) =>
+                  `block rounded-md px-3 py-2 text-[16px] font-medium ${
+                    isActive
+                      ? "bg-white text-black"
+                      : "text-black hover:bg-white/10"
+                  }`
+                }
+              >
+                {item.name}
+              </NavLink>
+            ))}
+          </div>
         </div>
-      </DisclosurePanel>
-    </Disclosure>
+      )}
+    </nav>
   );
 }
