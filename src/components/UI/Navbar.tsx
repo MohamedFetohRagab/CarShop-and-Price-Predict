@@ -17,7 +17,10 @@ const navigation = [
 
 export default function Example() {
   return (
-    <Disclosure as="nav" className="relative bg-gray-400 my-5 rounded-2xl">
+    <Disclosure
+      as="nav"
+      className="absolute top-5 w-full left-0 bg-gray-500 z-20 rounded-2xl"
+    >
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -59,8 +62,8 @@ export default function Example() {
                 <span className="sr-only">Open user menu</span>
                 <img
                   alt=""
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  className="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10"
+                  src="/profile.png"
+                  className="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10 "
                 />
               </MenuButton>
             </Menu>

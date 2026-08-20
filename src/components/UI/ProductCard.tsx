@@ -9,17 +9,17 @@ interface IProps {
 }
 
 const ProductCard = ({ product }: IProps) => {
-  const { title, price, description, imageURL, name, id } = product;
+  const { carBrand, price, description, imageURL, id } = product;
 
   return (
     <div className="max-w-sm md:max-w-lg mx-auto md:mx-0 border border-[#ddd] rounded-md p-2 flex flex-col space-y-3">
       <Image
         ImageSrc={imageURL}
         ClassName="rounded-lg  object-cover h-[200px]"
-        alt={name}
+        alt={carBrand}
       />
       <h3 className="m-0 font-medium text-[20px] hover:text-gray-800">
-        {title}
+        {carBrand}
       </h3>
       <p className="text-gray-700">
         {textSlicer(description)}

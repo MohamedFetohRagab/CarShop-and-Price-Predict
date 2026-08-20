@@ -1,12 +1,12 @@
-import { useState } from "react";
+// import { useState } from "react";
 import ProductCard from "./components/UI/ProductCard";
 import { productList } from "./data";
-import { IProduct } from "./interfaces";
+// import { IProduct } from "./interfaces";
 
 function App() {
-  const [products, setProductList] = useState<IProduct[]>(productList);
+  // const [products, setProductList] = useState<IProduct[]>(productList);
 
-  const rederProductList = products.map((product) => (
+  const rederProductList = productList.map((product) => (
     <ProductCard key={product.id} product={product} />
   ));
 

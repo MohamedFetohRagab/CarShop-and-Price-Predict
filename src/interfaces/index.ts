@@ -1,13 +1,18 @@
 // import { ProductNameTypes } from "../types";
 export type productName = "title" | "description" | "imageURL" | "price";
 export interface IProduct {
-  id?: number;
-  title: string;
-  description: string;
+  id: number;
+  carBrand: string;
+  carModel: string;
+  year: number;
+  fuelType: string;
+  transmission: string;
+  sellingType: string;
   imageURL: string;
-  price: string;
-  colors: string[];
-  name: string;
+
+  price: number;
+  description: string;
+  ownerId: string;
 }
 
 export interface IFormInput {

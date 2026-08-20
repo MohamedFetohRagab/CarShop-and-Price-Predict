@@ -12,31 +12,12 @@ import {
 import { productList } from "@/data";
 import { IProduct } from "@/interfaces";
 
-// const cars = [
-//   {
-//     id: 1,
-//     title: "Chevrolet Spark",
-//     engine: "995cc",
-//     fuel: "Petrol",
-//     transmission: "Manual",
-//     year: 2023,
-//     mileage: "24,500 km",
-//     location: "Cairo, Egypt",
-//     price: 120000,
-//     description:
-//       "A well-maintained Chevrolet Spark with excellent fuel efficiency and a comfortable interior. Perfect for city driving and everyday use.",
-//     images: [
-//       "https://images.unsplash.com/photo-1552519507-da3b142c6e3d",
-//       "https://images.unsplash.com/photo-1503376780353-7e6692767b70",
-//       "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7",
-//     ],
-//   },
-// ];
-
 function ProductDetails() {
   const { id } = useParams();
   //   console.log(id);
-  const car = productList.find((product: IProduct) => product.id == id);
+  const car = productList.find(
+    (product: IProduct) => product.id.toString() == id,
+  );
   if (!car) {
     return (
       <div className="min-h-screen flex items-center justify-center px-6">
@@ -80,7 +61,7 @@ function ProductDetails() {
             <div className="group relative overflow-hidden rounded-2xl bg-slate-200 shadow-sm">
               <img
                 src={`${car.imageURL}?auto=format&fit=crop&w=1400&q=80`}
-                alt={car.title}
+                alt={car.carBrand}
               />
 
               {/* Favorite */}
@@ -93,11 +74,9 @@ function ProductDetails() {
 
               {/* Badge */}
               <div className="absolute left-5 top-5 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-slate-800 shadow-md backdrop-blur">
-                {/* {car.fuel} */}
+                {car.fuelType}
               </div>
             </div>
-
-            {/* Small Images */}
 
             {/* Description */}
             <div className="mt-8 rounded-2xl bg-white p-6 shadow-sm sm:p-8">
@@ -119,11 +98,11 @@ function ProductDetails() {
                   </p>
 
                   <h1 className="mt-1 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                    {car.title}
+                    {car.carBrand}
                   </h1>
 
                   <p className="mt-2 text-slate-500">
-                    {/* {car.engine} • {car.fuel} */}
+                    {car.sellingType} • {car.fuelType}
                   </p>
                 </div>
               </div>
@@ -145,7 +124,7 @@ function ProductDetails() {
                   <p className="mt-3 text-xs text-slate-500">Fuel Type</p>
 
                   <p className="mt-1 font-semibold text-slate-900">
-                    {/* {car.fuel} */}
+                    {car.fuelType}
                   </p>
                 </div>
 
@@ -155,7 +134,7 @@ function ProductDetails() {
                   <p className="mt-3 text-xs text-slate-500">Engine</p>
 
                   <p className="mt-1 font-semibold text-slate-900">
-                    {/* {car.engine} */}
+                    {car.fuelType}
                   </p>
                 </div>
 
@@ -165,7 +144,7 @@ function ProductDetails() {
                   <p className="mt-3 text-xs text-slate-500">Transmission</p>
 
                   <p className="mt-1 font-semibold text-slate-900">
-                    {/* {car.transmission} */}
+                    {car.transmission}
                   </p>
                 </div>
 
@@ -175,7 +154,7 @@ function ProductDetails() {
                   <p className="mt-3 text-xs text-slate-500">Year</p>
 
                   <p className="mt-1 font-semibold text-slate-900">
-                    {/* {car.year} */}
+                    {car.year}
                   </p>
                 </div>
               </div>
@@ -188,7 +167,7 @@ function ProductDetails() {
                   <div>
                     <p className="text-xs text-slate-500">Location</p>
 
-                    {/* <p className="font-medium text-slate-800">{car.location}</p> */}
+                    <p className="font-medium text-slate-800"></p>
                   </div>
                 </div>
 

@@ -1,249 +1,144 @@
-import { v4 as uuid } from "uuid";
-import { ICategory, IFormInput, IProduct } from "../interfaces";
+import { IProduct } from "../interfaces";
 
 export const productList: IProduct[] = [
   {
     id: 1,
-    title: "2022 Genesis GV70: Nominee",
+    carBrand: "Toyota",
+    carModel: "Corolla",
+    year: 2022,
+    fuelType: "Hybrid",
+    transmission: "Automatic",
+    sellingType: "Cash",
+    imageURL: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb",
+    price: 24500,
     description:
-      "As luxury brands go, South Korea’s Genesis is still in its infancy, having sold its first cars",
-    imageURL:
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1283&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "3500000",
-    colors: [
-      "#A31ACB",
-      "#FF6E31",
-      "#3C2A21",
-      "#CB1C8D",
-      "#645CBB",
-      "#FF0032",
-      "#820000",
-      "#13005A",
-      "#1F8A70",
-      "#84D2C5",
-    ],
-    name: "Car",
+      "Excellent fuel efficiency, single owner, full agency maintenance records available.",
+    ownerId: "usr_94812",
   },
   {
     id: 2,
-    title: "2022 Genesis GV70: Nominee",
+    carBrand: "Mercedes-Benz",
+    carModel: "AMG GT",
+    year: 2021,
+    fuelType: "Petrol",
+    transmission: "Automatic",
+    sellingType: "Cash",
+    imageURL: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738",
+    price: 118000,
     description:
-      "As luxury brands go, South Korea’s Genesis is still in its infancy, having sold its first cars (as an independent Hyundai spinoff), the G80 and G90 sedans, for the 2017 model year. Despite its relative youth, Genesis has had a string of successes: We named the automaker’s G70 sports sedan our Best of 2019 award winner, and its GV80 mid-size SUV was a nominee last year for our Best of the Year award. New for 2022, the GV70 compact luxury SUV impresses on a number of fronts. Sleek exterior styling bridges the gap between a traditional SUV and the coupelike SUV look that’s increasingly popular among luxury marques. The cabin is just as distinctive and can be trimmed with premium materials like Nappa leather and carbon fiber.",
-    imageURL:
-      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    price: "500000",
-    colors: ["#FF0032", "#2563eb", "#FF6E31"],
-    name: "Cars",
+      "V8 biturbo engine, solar beam yellow paint, carbon fiber interior package.",
+    ownerId: "usr_10293",
   },
   {
     id: 3,
-    title: "Chevrolet Spark. 995cc Petrol",
+    carBrand: "BMW",
+    carModel: "330i M Sport",
+    year: 2023,
+    fuelType: "Petrol",
+    transmission: "Automatic",
+    sellingType: "Installments",
+    imageURL: "https://images.unsplash.com/photo-1555215695-3004980ad54e",
+    price: 43500,
     description:
-      "As luxury brands go, South Korea’s Genesis is still in its infancy, having sold its first cars (as an independent Hyundai spinoff), the G80 and G90 sedans, for the 2017 model year. Despite its relative youth, Genesis has had a string of successes: We named the automaker’s G70 sports sedan our Best of 2019 award winner, and its GV80 mid-size SUV was a nominee last year for our Best of the Year award. New for 2022, the GV70 compact luxury SUV impresses on a number of fronts. Sleek exterior styling bridges the gap between a traditional SUV and the coupelike SUV look that’s increasingly popular among luxury marques. The cabin is just as distinctive and can be trimmed with premium materials like Nappa leather and carbon fiber.",
-    imageURL:
-      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    price: "120000",
-    colors: ["#A31ACB", "#3C2A21", "#1F8A70", "#820000", "#FF0032"],
-
-    name: "Cars",
+      "Shadowline exterior trim, adaptive suspension, premium Harman Kardon sound.",
+    ownerId: "usr_58291",
   },
   {
     id: 4,
-    title: "2022 Genesis GV70: Nominees",
+    carBrand: "Hyundai",
+    carModel: "Elantra",
+    year: 2020,
+    fuelType: "Petrol",
+    transmission: "Automatic",
+    sellingType: "Cash",
+    imageURL: "https://images.unsplash.com/photo-1609521263047-f8f205293f24",
+    price: 16800,
     description:
-      "As luxury brands go, South Korea’s Genesis is still in its infancy, having sold its first cars (as an independent Hyundai spinoff), the G80 and G90 sedans",
-    imageURL:
-      "https://images.unsplash.com/photo-1618863099278-75222d755814?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "350000",
-    colors: [
-      "#A31ACB",
-      "#FF6E31",
-      "#3C2A21",
-      "#CB1C8D",
-      "#645CBB",
-      "#FF0032",
-      "#820000",
-      "#13005A",
-      "#1F8A70",
-      "#84D2C5",
-    ],
-    name: "Car",
+      "Clean interior, recently serviced, brand new tires and cold AC.",
+    ownerId: "usr_39201",
   },
   {
     id: 5,
-    title: "Black Sport Car ",
+    carBrand: "Tesla",
+    carModel: "Model 3",
+    year: 2024,
+    fuelType: "Electric",
+    transmission: "Automatic",
+    sellingType: "Cash",
+    imageURL: "https://images.unsplash.com/photo-1560958089-b8a1929cea89",
+    price: 38900,
     description:
-      "As luxury brands go, South Korea’s Genesis is still in its infancy, having sold its first cars (as an independent Hyundai spinoff), the G80 and G90 sedans",
-    imageURL:
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "150000",
-    colors: [],
-
-    name: "Car",
+      "Long Range Dual Motor AWD, Autopilot enabled, mint condition with low mileage.",
+    ownerId: "usr_77412",
   },
   {
     id: 6,
-    title: "Chevrolet Spark. 995cc Petrol",
+    carBrand: "Kia",
+    carModel: "Sportage",
+    year: 2022,
+    fuelType: "Petrol",
+    transmission: "Automatic",
+    sellingType: "Installments",
+    imageURL: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2",
+    price: 27500,
     description:
-      "As luxury brands go, South Korea’s Genesis is still in its infancy, having sold its first cars (as an independent Hyundai spinoff), the G80 and G90 sedans, for the 2017 model year. Despite its relative youth, Genesis has had a string of successes: We named the automaker’s G70 sports sedan our Best of 2019 award winner, and its GV80 mid-size SUV was a nominee last year for our Best of the Year award. New for 2022, the GV70 compact luxury SUV impresses on a number of fronts. Sleek exterior styling bridges the gap between a traditional SUV and the coupelike SUV look that’s increasingly popular among luxury marques. The cabin is just as distinctive and can be trimmed with premium materials like Nappa leather and carbon fiber.",
-    imageURL:
-      "https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "120000",
-    colors: ["#A31ACB", "#3C2A21", "#1F8A70", "#820000", "#FF0032"],
-
-    name: "Cars",
+      "Panoramic sunroof, heated seats, blind-spot monitoring, family-owned SUV.",
+    ownerId: "usr_88302",
   },
   {
     id: 7,
-    title: "2022 Genesis GV70: Nominee",
+    carBrand: "Porsche",
+    carModel: "911 Carrera",
+    year: 2023,
+    fuelType: "Petrol",
+    transmission: "PDK",
+    sellingType: "Cash",
+    imageURL: "https://images.unsplash.com/photo-1503376780353-7e6692767b70",
+    price: 135000,
     description:
-      "As luxury brands go, South Korea’s Genesis is still in its infancy, having sold its first cars (as an independent Hyundai spinoff), the G80 and G90 sedans, for the 2017 model year. Despite its relative youth, Genesis has had a string of successes: We named the automaker’s G70 sports sedan our Best of 2019 award winner, and its GV80 mid-size SUV was a nominee last year for our Best of the Year award. New for 2022, the GV70 compact luxury SUV impresses on a number of fronts. Sleek exterior styling bridges the gap between a traditional SUV and the coupelike SUV look that’s increasingly popular among luxury marques. The cabin is just as distinctive and can be trimmed with premium materials like Nappa leather and carbon fiber.",
-    imageURL:
-      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "500000",
-    colors: ["#FF0032", "#2563eb", "#FF6E31"],
-
-    name: "Cars",
+      "Sport Chrono package, GT silver metallic, flawless paint protection film installed.",
+    ownerId: "usr_49102",
   },
   {
     id: 8,
-    title: "2022 Genesis GV70: Nominee",
+    carBrand: "Volkswagen",
+    carModel: "Golf GTI",
+    year: 2019,
+    fuelType: "Petrol",
+    transmission: "Manual",
+    sellingType: "Cash",
+    imageURL: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d",
+    price: 21000,
     description:
-      "As luxury brands go, South Korea’s Genesis is still in its infancy, having sold its first cars (as an independent Hyundai spinoff), the G80 and G90 sedans",
-    imageURL:
-      "https://images.unsplash.com/photo-1592199299806-e7349699f6a9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "150000",
-    colors: [],
-    name: "Car",
+      "6-speed manual, plaid cloth seats, stage 1 tune, well-cared enthusiast car.",
+    ownerId: "usr_11948",
   },
   {
     id: 9,
-    title: "Nike FREE",
+    carBrand: "Ford",
+    carModel: "Mustang GT",
+    year: 2021,
+    fuelType: "Petrol",
+    transmission: "Automatic",
+    sellingType: "Installments",
+    imageURL: "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd",
+    price: 36000,
     description:
-      "As luxury brands go, South Korea’s Genesis is still in its infancy, having sold its first cars (as an independent Hyundai spinoff), the G80 and G90 sedans",
-    imageURL:
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "2000",
-    colors: ["red"],
-    name: "Nike",
+      "5.0L Coyote V8, active valve performance exhaust, digital cluster upgrade.",
+    ownerId: "usr_66023",
   },
   {
     id: 10,
-    title: "Jordan 6 Infrared",
+    carBrand: "Audi",
+    carModel: "A6",
+    year: 2022,
+    fuelType: "Mild Hybrid",
+    transmission: "Automatic",
+    sellingType: "Cash",
+    imageURL: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6",
+    price: 49000,
     description:
-      "As luxury brands go, South Korea’s Genesis is still in its infancy, having sold its first cars (as an independent Hyundai spinoff), the G80 and G90 sedans",
-    imageURL:
-      "https://images.unsplash.com/photo-1643584549037-96e2a1652a1e?q=80&w=1333&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "1500",
-    colors: ["red", "black"],
-    name: "Jordan",
-  },
-  {
-    id: 11,
-    title: "Jordan 6 Infrared",
-    description:
-      "As luxury brands go, South Korea’s Genesis is still in its infancy, having sold its first cars (as an independent Hyundai spinoff), the G80 and G90 sedans",
-    imageURL:
-      "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1325&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "1500",
-    colors: ["red", "black"],
-    name: "Jordan",
-  },
-  {
-    id: 12,
-    title: "Nike FREE",
-    description:
-      "As luxury brands go, South Korea’s Genesis is still in its infancy, having sold its first cars (as an independent Hyundai spinoff), the G80 and G90 sedans",
-    imageURL:
-      "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1412&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "1500",
-    colors: ["red", "black"],
-    name: "NIKE",
-  },
-];
-
-export const formInputsList: IFormInput[] = [
-  {
-    id: "title",
-    name: "title",
-    label: "Product Title",
-    type: "text",
-  },
-  {
-    id: "description",
-    name: "description",
-    label: "Product Description",
-    type: "text",
-  },
-  {
-    id: "image",
-    name: "imageURL",
-    label: "Product Image URL",
-    type: "text",
-  },
-  {
-    id: "price",
-    name: "price",
-    label: "Product Price",
-    type: "text",
-  },
-];
-
-export const colors: string[] = [
-  "#ff0000",
-  "#2563eb",
-  "#008000",
-  "#13005A",
-  "#A31ACB",
-  "#FF6E31",
-  "#3C2A21",
-  "#6C4AB6",
-  "#CB1C8D",
-  "#000000",
-  "#645CBB",
-];
-
-export const categories: ICategory[] = [
-  {
-    id: uuid(),
-    name: "Nike",
-    imageURL:
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  },
-  {
-    id: uuid(),
-    name: "T-Shirt",
-    imageURL:
-      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
-  },
-  {
-    id: uuid(),
-    name: "Clothes",
-    imageURL:
-      "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
-  },
-  {
-    id: uuid(),
-    name: "PC Desktop",
-    imageURL:
-      "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1142&q=80",
-  },
-  {
-    id: uuid(),
-    name: "Furniture",
-    imageURL:
-      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  },
-  {
-    id: uuid(),
-    name: "Cars",
-    imageURL:
-      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  },
-  {
-    id: uuid(),
-    name: "Camera",
-    imageURL:
-      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "Quattro all-wheel drive, dual touchscreen MMI, premium leather executive trim.",
+    ownerId: "usr_55410",
   },
 ];
