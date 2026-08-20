@@ -1,4 +1,3 @@
-// import { ProductNameTypes } from "../types";
 export type productName = "title" | "description" | "imageURL" | "price";
 export interface IProduct {
   id: number;
