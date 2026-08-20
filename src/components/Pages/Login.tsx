@@ -42,7 +42,7 @@ const Login = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col w-full gap-2 sm:gap-5 items-center"
         >
-          <div className="w-[70%] flex flex-col ">
+          <div className="w-full sm:w-[70%] flex sm:gap-4 flex-col">
             <label htmlFor="email" className="text-xl mb-2 text-white">
               Email
             </label>
@@ -58,7 +58,7 @@ const Login = () => {
             )}
           </div>
 
-          <div className="w-[70%] flex flex-col ">
+          <div className="w-full sm:w-[70%] flex sm:gap-4 flex-col">
             <label htmlFor="password" className="text-xl mb-2 text-white">
               Password
             </label>
@@ -76,7 +76,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="bg-slate-700 p-3 rounded-md w-[70%] text-xl text-white cursor-pointer hover:bg-slate-800"
+            className="bg-slate-700 p-3 mt-5 rounded-md w-full sm:w-[70%] text-xl text-white cursor-pointer hover:bg-slate-800"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : "Sign In"}

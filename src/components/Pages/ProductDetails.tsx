@@ -14,7 +14,6 @@ import { IProduct } from "@/interfaces";
 
 function ProductDetails() {
   const { id } = useParams();
-  //   console.log(id);
   const car = productList.find(
     (product: IProduct) => product.id.toString() == id,
   );
